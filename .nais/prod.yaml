@@ -44,3 +44,23 @@ spec:
     requests:
       cpu: "1"
       memory: 1024Mi
+
+---
+apiVersion: "nais.io/v1"
+kind: "Alert"
+metadata:
+  name: metabase
+  namespace: nada
+  labels:
+    team: nada
+spec:
+  receivers:
+    slack:
+      channel: '#nada-alerts'
+      prependText: '<!here> | '
+  alerts:
+    - alert: metabase nede
+      expr: sum(probe_success{app="metabase",kubernetes_namespace="nada"})/count(probe_success{app="metabase",kubernetes_namespace="nada"}) < 1
+      for: 2m
+      description: "Metabase er nede i prod-gcp namespace nada"
+      action: "Sjekk logger"
