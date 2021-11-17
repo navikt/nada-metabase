@@ -1,0 +1,46 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    team: nada
+  name: metabase
+  namespace: nada
+spec:
+  env:
+  - name: MB_DB_TYPE
+    value: postgres
+  - name: JAVA_TIMEZONE
+    value: UTC+1
+  - name: MB_EMOJI_IN_LOGS
+    value: "true"
+  - name: MB_GOOGLE_AUTH_AUTO_CREATE_ACCOUNTS_DOMAIN
+    value: nav.no
+  - name: MB_GOOGLE_AUTH_CLIENT_ID
+    value: 1007056531311-hgpcbevnbef01id33m765tlbm1p8g04g.apps.googleusercontent.com
+  - name: MB_PLUGINS_DIR
+    value: "/tmp"
+  - name: MB_ADMIN_EMAIL
+    value: "nada@nav.no"
+  - name: MB_METABOT_ENABLED
+    value: "true"
+  envFrom:
+  - secret: metabase
+  gcp:
+    sqlInstances:
+    - databases:
+      - name: metabase
+      type: POSTGRES_12
+  image: metabase/metabase:v0.41.2
+  ingresses:
+  - https://metabase.intern.nav.no
+  port: 3000
+  replicas:
+    max: 1
+    min: 1
+  resources:
+    limits:
+      cpu: "2"
+      memory: 2048Mi
+    requests:
+      cpu: "1"
+      memory: 1024Mi
