@@ -39,10 +39,10 @@ spec:
     min: 1
   resources:
     limits:
-      cpu: "2"
-      memory: 2048Mi
+      cpu: 500m
+      memory: 4Gi
     requests:
-      cpu: "1"
+      cpu: 200m
       memory: 1024Mi
 
 ---
