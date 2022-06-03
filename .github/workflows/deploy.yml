@@ -16,7 +16,7 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: .nais/dev.yaml
-          VAR: db_name_dev=${{secrets.DB_NAME_DEV}},db_host_dev=${{secrets.DB_HOST_DEV}},db_pass_dev=${{secrets.DB_PASS_DEV}},db_port_dev=${{secrets.DB_PORT_DEV}},db_url_dev=${{secrets.DB_URL_DEV}},db_user_dev=${{secrets.DB_USER_DEV}}
+          VAR: db_secret=${{secrets.DB_SECRET_DEV}}
 
   deploy-prod:
     name: Deploy to NAIS prod
