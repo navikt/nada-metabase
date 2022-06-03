@@ -6,7 +6,7 @@ metadata:
   labels:
     app: metabase
     team: nada
-  name: google-sql-nada-metabase
+  name: metabase
   namespace: nada
 type: Opaque
 ---
