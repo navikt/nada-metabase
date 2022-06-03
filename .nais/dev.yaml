@@ -40,3 +40,20 @@ spec:
     requests:
       cpu: "1"
       memory: 1024Mi
+---
+apiVersion: v1
+data:
+  MB_DB_DBNAME: {{ db_name_dev }}
+  MB_DB_HOST: {{ db_host_dev }}
+  MB_DB_PASS: {{ db_pass_dev }}
+  MB_DB_PORT: {{ db_port_dev }}
+  MB_DB_URL: {{ db_url_dev }}
+  MB_DB_USER: {{ db_user_dev }}
+kind: Secret
+metadata:
+  labels:
+    app: metabase
+    team: nada
+  name: google-sql-nada-metabase
+  namespace: nada
+type: Opaque
