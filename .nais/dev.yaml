@@ -13,12 +13,16 @@ spec:
     value: UTC
   - name: MB_EMOJI_IN_LOGS
     value: "true"
-  - name: MB_GOOGLE_AUTH_AUTO_CREATE_ACCOUNTS_DOMAIN
-    value: nav.no
-  - name: MB_GOOGLE_AUTH_CLIENT_ID
-    value: 270239535136-gs7ot9ba0c0rvfdlmos6tt63mlv0ksc7.apps.googleusercontent.com
   - name: MB_PLUGINS_DIR
     value: "/tmp"
+  - name: MB_DB_DBNAME
+    value: metabase
+  - name: MB_SAML_ENABLED
+    value: "true"
+  - name: MB_SAML_GROUP_SYNC
+    value: "true"
+  - name: MB_SITE_URL
+    value: https://metabase.dev.intern.nav.no
   envFrom:
   - secret: metabase
   gcp:
@@ -31,7 +35,7 @@ spec:
   - https://metabase.dev.intern.nav.no
   port: 3000
   replicas:
-    max: 1
+    max: 2
     min: 1
   resources:
     limits:
