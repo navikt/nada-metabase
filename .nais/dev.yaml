@@ -28,7 +28,7 @@ spec:
   - name: MB_ENABLE_PASSWORD_LOGIN
     value: "true"
   - name: MAX_SESSION_AGE
-    value: 1440
+    value: "1440"
   - name: MB_SESSION_COOKIES
     value: "true"
   envFrom:
