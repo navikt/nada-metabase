@@ -25,6 +25,12 @@ spec:
     value: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
   - name: MB_SITE_URL
     value: https://metabase.dev.intern.nav.no
+  - name: MB_ENABLE_PASSWORD_LOGIN
+    value: "true"
+  - name: MAX_SESSION_AGE
+    value: 1440
+  - name: MB_SESSION_COOKIES
+    value: "true"
   envFrom:
   - secret: metabase
   gcp:
