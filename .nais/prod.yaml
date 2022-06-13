@@ -68,3 +68,23 @@ spec:
       for: 2m
       description: "App {{ $labels.deployment }} er nede i namespace {{ $labels.kubernetes_namespace }}"
       action: "`kubectl describe pod -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for events, og `kubectl logs -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for logger"
+
+---
+apiVersion: "nais.io/v1"
+kind: "Alert"
+metadata:
+  name: metabase-nais-alerts
+  namespace: nada
+  labels:
+    team: nada
+spec:
+  receivers:
+    slack:
+      channel: '#nais-alerts-prod'
+  alerts:
+    - alert: metabase nede
+      expr: kube_deployment_status_replicas_available{deployment="metabase"} == 0
+      for: 2m
+      description: "App {{ $labels.deployment }} er nede i namespace {{ $labels.kubernetes_namespace }}"
+      action: "`kubectl describe pod -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for events, og `kubectl logs -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for logger"
+
