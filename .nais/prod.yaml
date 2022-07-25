@@ -30,7 +30,7 @@ spec:
     - databases:
       - name: metabase
       type: POSTGRES_12
-  image: metabase/metabase:v0.43.3
+  image: metabase/metabase:v0.43.4
   ingresses:
   - https://metabase.intern.nav.no
   port: 3000
