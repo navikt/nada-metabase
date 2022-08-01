@@ -23,6 +23,20 @@ spec:
     value: "nada@nav.no"
   - name: MB_METABOT_ENABLED
     value: "true"
+  - name: MB_SAML_ENABLED
+    value: "true"
+  - name: MB_SAML_GROUP_SYNC
+    value: "true"
+  - name: MB_SAML_ATTRIBUTE_GROUP
+    value: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
+  - name: MB_SITE_URL
+    value: https://metabase.intern.nav.no
+  - name: MB_ENABLE_PASSWORD_LOGIN
+    value: "true"
+  - name: MAX_SESSION_AGE
+    value: "1440"
+  - name: MB_SESSION_COOKIES
+    value: "true"
   envFrom:
   - secret: metabase
   gcp:
@@ -30,7 +44,7 @@ spec:
     - databases:
       - name: metabase
       type: POSTGRES_12
-  image: metabase/metabase:v0.43.4
+  image: metabase/metabase-enterprise:v1.43.4.2
   ingresses:
   - https://metabase.intern.nav.no
   port: 3000
