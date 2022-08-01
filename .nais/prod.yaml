@@ -13,10 +13,6 @@ spec:
     value: UTC+1
   - name: MB_EMOJI_IN_LOGS
     value: "true"
-  - name: MB_GOOGLE_AUTH_AUTO_CREATE_ACCOUNTS_DOMAIN
-    value: nav.no
-  - name: MB_GOOGLE_AUTH_CLIENT_ID
-    value: 1007056531311-hgpcbevnbef01id33m765tlbm1p8g04g.apps.googleusercontent.com
   - name: MB_PLUGINS_DIR
     value: "/tmp"
   - name: MB_ADMIN_EMAIL
