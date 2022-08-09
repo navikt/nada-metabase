@@ -5,32 +5,18 @@ metadata:
     team: nada
   name: metabase
   namespace: nada
+  annotations:
+    {{#each annotations}}
+    {{this.key}}: "{{this.value}}"
+    {{/each}}
 spec:
   env:
-  - name: MB_DB_TYPE
-    value: postgres
-  - name: JAVA_TIMEZONE
-    value: UTC
-  - name: MB_EMOJI_IN_LOGS
-    value: "true"
-  - name: MB_PLUGINS_DIR
-    value: "/tmp"
-  - name: MB_DB_DBNAME
-    value: metabase
-  - name: MB_SAML_ENABLED
-    value: "true"
-  - name: MB_SAML_GROUP_SYNC
-    value: "true"
-  - name: MB_SAML_ATTRIBUTE_GROUP
-    value: http://schemas.microsoft.com/ws/2008/06/identity/claims/groups
   - name: MB_SITE_URL
     value: https://metabase.dev.intern.nav.no
-  - name: MB_ENABLE_PASSWORD_LOGIN
-    value: "true"
-  - name: MAX_SESSION_AGE
-    value: "1440"
-  - name: MB_SESSION_COOKIES
-    value: "true"
+  {{#each envs}}
+  - name: {{this.name}}
+    value: {{this.value}}
+  {{/each}}
   envFrom:
   - secret: metabase
   gcp:
@@ -38,7 +24,7 @@ spec:
     - databases:
       - name: metabase
       type: POSTGRES_12
-  image: metabase/metabase-enterprise:v1.43.2
+  image: {{image}}
   ingresses:
   - https://metabase.dev.intern.nav.no
   port: 3000
