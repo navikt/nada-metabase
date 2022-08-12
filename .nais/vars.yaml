@@ -40,7 +40,7 @@ envs:
   - name: MB_SESSION_COOKIES
     value: "true"
   - name: MB_EMAIL_FROM_ADDRESS
-    value: "srvKubernetesAlarm@nav.no"
+    value: "metabase@nav.no"
   - name: MB_EMAIL_SMTP_HOST
     value: "smtp.adeo.no"
   - name: MB_EMAIL_SMTP_PORT
@@ -48,4 +48,4 @@ envs:
   - name: MB_EMAIL_SMTP_SECURITY
     value: "none"
   - name: MB_EMAIL_SMTP_USERNAME
-    value: "srvKubernetesAlarm"
+    value: "srvNada"
