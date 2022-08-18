@@ -27,6 +27,12 @@ spec:
   image: {{image}}
   ingresses:
   - https://metabase.dev.intern.nav.no
+  liveness:
+    initialDelay: 80
+    path: /api/health
+  readiness:
+    initialDelay: 80
+    path: /api/health
   port: 3000
   replicas:
     max: 2
