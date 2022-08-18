@@ -24,6 +24,9 @@ spec:
     - databases:
       - name: metabase
       type: POSTGRES_12
+      flags:
+        - name: max_connections
+          value: "50"
   image: {{image}}
   ingresses:
   - https://metabase.dev.intern.nav.no
