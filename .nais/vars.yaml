@@ -1,7 +1,7 @@
 annotations:
   - key: config.linkerd.io/skip-outbound-ports
     value: "26"
-image: metabase/metabase-enterprise:v1.44.1
+image: metabase/metabase-enterprise:v1.44.2
 envs:
   - name: MB_DB_TYPE
     value: postgres
