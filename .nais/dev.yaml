@@ -21,7 +21,8 @@ spec:
   - secret: metabase
   gcp:
     sqlInstances:
-    - databases:
+    - name: metabasev2
+      databases:
       - name: metabase
       type: POSTGRES_12
       flags:
