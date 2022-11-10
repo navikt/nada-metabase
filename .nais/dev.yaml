@@ -33,6 +33,7 @@ spec:
   image: {{image}}
   ingresses:
   - https://metabase.dev.intern.nav.no
+  - https://metabase-innside.dev.intern.nav.no
   liveness:
     initialDelay: 80
     path: /api/health
