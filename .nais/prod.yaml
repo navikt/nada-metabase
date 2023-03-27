@@ -56,41 +56,25 @@ spec:
         - application: nada-backend
 
 ---
-apiVersion: "nais.io/v1"
-kind: "Alert"
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
 metadata:
-  name: metabase
+  name: metabase-alert
   namespace: nada
   labels:
     team: nada
 spec:
-  receivers:
-    slack:
-      channel: '#nada-alerts'
-      prependText: '<!here> | '
-  alerts:
-    - alert: metabase nede
-      expr: kube_deployment_status_replicas_available{deployment="metabase"} == 0
+  groups:
+  - name: metabase-alert
+    rules:
+    - alert: InstanceDown
+      expr: kube_deployment_status_replicas_available{namespace="nada", deployment="metabase"} == 0
       for: 2m
-      description: "App {{ $labels.deployment }} er nede i namespace {{ $labels.kubernetes_namespace }}"
-      action: "`kubectl describe pod -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for events, og `kubectl logs -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for logger"
-
----
-apiVersion: "nais.io/v1"
-kind: "Alert"
-metadata:
-  name: metabase-nais-alerts
-  namespace: nada
-  labels:
-    team: nada
-spec:
-  receivers:
-    slack:
-      channel: '#nais-alerts-prod'
-  alerts:
-    - alert: metabase nede
-      expr: kube_deployment_status_replicas_available{deployment="metabase"} == 0
-      for: 2m
-      description: "App {{ $labels.deployment }} er nede i namespace {{ $labels.kubernetes_namespace }}"
-      action: "`kubectl describe pod -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for events, og `kubectl logs -l app={{ $labels.deployment }} -n {{ $labels.namespace }}` for logger"
-
+      annotations:
+        consequence: Metabase is unavailable
+        action: "`kubectl describe pod <podname>` -> `kubectl logs <podname>`"
+        summary: |-
+          No metabase pods are running in prod-gcp
+      labels:
+        namespace: nada
+        severity: critical
