@@ -59,3 +59,6 @@ spec:
     inbound:
       rules:
       - application: nada-backend
+    outbound:
+      external:
+      - host: token-check.metabase.com
