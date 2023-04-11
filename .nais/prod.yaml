@@ -56,9 +56,9 @@ spec:
         - application: nada-backend
     outbound:
       external:
-      {{#each externalhosts}}
-      - host: "{{this.value}}"
-      {{/each}}
+      {{#externalhosts}}
+      - host: "{{ . }}"
+      {{/externalhosts}}
 
 ---
 apiVersion: monitoring.coreos.com/v1
