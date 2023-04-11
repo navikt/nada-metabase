@@ -39,7 +39,7 @@ spec:
   - https://metabase.dev.intern.nav.no
   - https://metabase-inside.dev.intern.nav.no
   liveness:
-    initialDelay: 80
+    initialDelay: 120
     path: /api/health
   readiness:
     initialDelay: 80
