@@ -62,3 +62,4 @@ spec:
     outbound:
       external:
       - host: token-check.metabase.com
+      - host: slack.com
