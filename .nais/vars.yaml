@@ -49,3 +49,6 @@ envs:
     value: "srvNada"
   - name: MB_SEND_NEW_SSO_USER_ADMIN_EMAIL
     value: "false"
+externalhosts:
+  - token-check.metabase.com
+  - slack.com

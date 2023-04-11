@@ -61,5 +61,6 @@ spec:
       - application: nada-backend
     outbound:
       external:
-      - host: token-check.metabase.com
-      - host: slack.com
+      {{#externalhosts}}
+      - host: "{{ . }}"
+      {{/externalhosts}}
