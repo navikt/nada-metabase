@@ -29,17 +29,21 @@ spec:
       flags:
         - name: max_connections
           value: "50"
+      tier: db-g1-small
   image: {{image}}
   ingresses:
   - https://metabase.intern.nav.no
   - https://metabase-inside.intern.nav.no
   liveness:
-    initialDelay: 120
+    path: /api/health
+  startup:
+    initialDelay: 40
+    periodSeconds: 10
+    failureThreshold: 10
+    path: /api/health
+  readiness:
     path: /api/health
   port: 3000
-  readiness:
-    initialDelay: 80
-    path: /api/health
   replicas:
     max: 4
     min: 2

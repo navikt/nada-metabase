@@ -39,10 +39,13 @@ spec:
   - https://metabase.dev.intern.nav.no
   - https://metabase-inside.dev.intern.nav.no
   liveness:
-    initialDelay: 120
+    path: /api/health
+  startup:
+    initialDelay: 40
+    periodSeconds: 10
+    failureThreshold: 10
     path: /api/health
   readiness:
-    initialDelay: 80
     path: /api/health
   port: 3000
   replicas:
