@@ -36,8 +36,8 @@ spec:
           value: "on"
   image: {{image}}
   ingresses:
-  - https://metabase.dev.intern.nav.no
-  - https://metabase-inside.dev.intern.nav.no
+  - https://metabase.intern.dev.nav.no
+  - https://metabase-inside.intern.dev.nav.no
   liveness:
     path: /api/health
   startup:
