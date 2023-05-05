@@ -6,13 +6,13 @@ Enkel POC av [Metabase](https://www.metabase.com/) som et analyseverktøy, ala S
 
 ### Hemmeligheter
 
-Hemmeligheter er lagret i Google Secret Manager. Dette betyr at database credentials må kopieres fra `google-sql-metabase` til `metabase` i GSM.
+Vi lagrer hemmeligheter for Metabase i Google Secret Manager. Dette betyr at passordet til databasen hentes fra `MB_DB_PASS`, og ikke fra secreten `google-sql-metabase`.
 
-Følgende hemmeligheter bruker vi:
+Disse hemmelighentene er definert i [Google Secret Manager](https://console.cloud.google.com/security/secret-manager/secret/metabase/versions?project=nada-dev-db2e):
 ```
-MB_DB_CONNECTION_URI
+MB_DB_PASS
 MB_PREMIUM_EMBEDDING_TOKEN
 MB_SAML_IDENTITY_PROVIDER_CERTIFICATE
-MB_SAML_IDENTITY_PROVIDER_ISSUER
-MB_SAML_IDENTITY_PROVIDER_URI
+MB_SLACK_APP_TOKEN
+MB_EMAIL_SMTP_PASSWORD
 ```
