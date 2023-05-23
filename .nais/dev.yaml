@@ -65,3 +65,6 @@ spec:
       {{#externalhosts}}
       - host: "{{ . }}"
       {{/externalhosts}}
+      - host: smtp.adeo.no
+        ports:
+        - port: 26
