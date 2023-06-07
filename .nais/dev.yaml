@@ -26,6 +26,8 @@ spec:
     - name: metabasev2
       databases:
       - name: metabase
+        users:
+        - name: ds_test
       type: POSTGRES_12
       flags:
         - name: max_connections
