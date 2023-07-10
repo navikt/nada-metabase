@@ -1,6 +1,6 @@
 # Metabase
 
-Enkel POC av [Metabase](https://www.metabase.com/) som et analyseverktøy, ala Superset og Tableau.
+Naisifisert kjøring av Metabase.
 
 ## Deployment
 
