@@ -29,7 +29,7 @@ spec:
         users:
         - name: ds_test
       type: POSTGRES_12
-      diskSize: 30
+      diskSize: 50
       flags:
         - name: max_connections
           value: "50"
