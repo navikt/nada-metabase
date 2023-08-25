@@ -34,7 +34,7 @@ spec:
           value: "50"
         - name: cloudsql.logical_decoding
           value: "on"
-      diskAutoresize: "true"
+      diskAutoresize: true
   image: {{image}}
   ingresses:
   - https://metabase.intern.dev.nav.no
