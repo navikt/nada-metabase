@@ -13,8 +13,8 @@ envs:
     value: "5432"
   - name: JAVA_TIMEZONE
     value: UTC+1
-  - name: MB_EMOJI_IN_LOGS
-    value: "true"
+  - name: MB_COLORIZE_LOGS
+    value: "false"
   - name: MB_PLUGINS_DIR
     value: "/tmp"
   - name: MB_ADMIN_EMAIL
