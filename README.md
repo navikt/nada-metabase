@@ -2,11 +2,10 @@
 
 Naisifisert kjøring av Metabase.
 
-## Deployment
+## Hemmeligheter
 
-### Hemmeligheter
-
-Vi lagrer hemmeligheter for Metabase i Google Secret Manager. Dette betyr at passordet til databasen hentes fra `MB_DB_PASS`, og ikke fra secreten `google-sql-metabase`.
+Vi lagrer hemmeligheter for Metabase i Google Secret Manager.
+Dette betyr at passordet til databasen hentes fra `MB_DB_PASS`, og ikke fra secreten `google-sql-metabase`.
 
 Disse hemmelighentene er definert i [Google Secret Manager](https://console.cloud.google.com/security/secret-manager/secret/metabase/versions?project=nada-dev-db2e):
 ```
