@@ -32,3 +32,4 @@ jobs:
           CLUSTER: prod-gcp
           RESOURCE: .nais/prod.yaml
           VARS: .nais/vars.yaml
+          TIMEOUT: 15m
