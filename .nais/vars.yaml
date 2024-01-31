@@ -1,6 +1,8 @@
 annotations:
   - key: config.linkerd.io/skip-outbound-ports
     value: "26"
+  - key: nginx.ingress.kubernetes.io/proxy-body-size
+    value: "2m"
 image: metabase/metabase-enterprise:v1.48.3
 envs:
   - name: MB_DB_TYPE
