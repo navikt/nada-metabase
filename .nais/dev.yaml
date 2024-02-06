@@ -50,10 +50,9 @@ spec:
     min: 1
   resources:
     limits:
-      cpu: "2"
-      memory: 2048Mi
+      memory: 1536Mi
     requests:
-      cpu: "1"
+      cpu: 20m
       memory: 1024Mi
   accessPolicy:
     inbound:
