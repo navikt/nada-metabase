@@ -3,7 +3,7 @@ annotations:
     value: "26"
   - key: nginx.ingress.kubernetes.io/proxy-body-size
     value: "8m"
-image: metabase/metabase-enterprise:v1.49.2
+image: metabase/metabase-enterprise:v1.49.3
 envs:
   - name: MB_DB_TYPE
     value: postgres
