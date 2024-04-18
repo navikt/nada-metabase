@@ -33,6 +33,7 @@ spec:
   image: {{image}}
   ingresses:
   - https://metabase.intern.nav.no
+  - https://metabase.ansatt.nav.no
   - https://metabase-inside.intern.nav.no
   liveness:
     path: /api/health
