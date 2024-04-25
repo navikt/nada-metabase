@@ -101,6 +101,6 @@ metadata:
   name: metabase-redirect
   namespace: nada
 spec:
-  ingressClassName: nais-ingress
+  ingressClassName: nais-ingress-external
   rules:
   - host: metabase.intern.nav.no
