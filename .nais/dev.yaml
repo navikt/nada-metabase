@@ -33,7 +33,6 @@ spec:
       diskAutoresize: true
   image: {{image}}
   ingresses:
-  - https://metabase.intern.dev.nav.no
   - https://metabase.ansatt.dev.nav.no
   - https://metabase-inside.intern.dev.nav.no
   liveness:
@@ -67,3 +66,17 @@ spec:
       - host: smtp.adeo.no
         ports:
         - port: 26
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: https://metabase.ansatt.dev.nav.no
+  labels:
+    team: nada
+  name: metabase-redirect
+  namespace: nada
+spec:
+  ingressClassName: nais-ingress
+  rules:
+  - host: metabase.intern.dev.nav.no
