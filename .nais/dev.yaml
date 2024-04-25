@@ -71,7 +71,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: https://metabase.ansatt.dev.nav.no
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 https://metabase.ansatt.dev.nav.no$request_uri;
   labels:
     team: nada
   name: metabase-redirect
