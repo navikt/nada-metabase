@@ -54,3 +54,5 @@ envs:
 externalhosts:
   - token-check.metabase.com
   - slack.com
+  - files.slack.com
+  - metaboat.slack.com
