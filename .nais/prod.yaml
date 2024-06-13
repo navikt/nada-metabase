@@ -30,7 +30,7 @@ spec:
         - name: max_connections
           value: "100"
       tier: db-g1-small
-  image: {{image}}
+  image: metabase/metabase-enterprise:v1.49.14
   ingresses:
   - https://metabase.ansatt.nav.no
   - https://metabase-inside.intern.nav.no
