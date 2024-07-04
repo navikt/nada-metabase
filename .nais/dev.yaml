@@ -31,7 +31,7 @@ spec:
         - name: max_connections
           value: "50"
       diskAutoresize: true
-  image: metabase/metabase-enterprise:v1.50.7
+  image: {{image}}
   ingresses:
   - https://metabase.ansatt.dev.nav.no
   - https://metabase-inside.intern.dev.nav.no
