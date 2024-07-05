@@ -12,7 +12,7 @@ metadata:
 spec:
   prometheus:
     enabled: true
-    path: /
+    path: /metrics
     port: "9191"
   env:
   - name: JAVA_OPTS
