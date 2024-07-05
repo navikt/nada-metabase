@@ -12,7 +12,7 @@ metadata:
 spec:
   env:
   - name: JAVA_OPTS
-    value: "--XX:MaxRAMPercentage=75.0 -XX:+UseZGC -XX:+ZGenerational -XX:ActiveProcessorCount=2"
+    value: "--XX:MaxRAMPercentage=75.0 -XX:+UseParallelGC -XX:ActiveProcessorCount=2"
   - name: MB_SITE_URL
     value: https://metabase.ansatt.dev.nav.no
   - name: MB_DB_USER
