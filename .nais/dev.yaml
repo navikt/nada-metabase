@@ -10,9 +10,15 @@ metadata:
     {{this.key}}: "{{this.value}}"
     {{/each}}
 spec:
+  prometheus:
+    enabled: true
+    path: /
+    port: "9191"
   env:
   - name: JAVA_OPTS
     value: "--XX:MaxRAMPercentage=75.0 -XX:+UseParallelGC -XX:ActiveProcessorCount=2"
+  - name: MB_PROMETHEUS_SERVER_PORT
+    value: 9191
   - name: MB_SITE_URL
     value: https://metabase.ansatt.dev.nav.no
   - name: MB_DB_USER
