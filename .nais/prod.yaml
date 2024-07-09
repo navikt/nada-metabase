@@ -10,7 +10,13 @@ metadata:
     {{this.key}}: "{{this.value}}"
     {{/each}}
 spec:
+  prometheus:
+    enabled: true
+    path: /metrics
+    port: "9191"
   env:
+  - name: MB_PROMETHEUS_SERVER_PORT
+    value: "9191"
   - name: MB_SITE_URL
     value: https://metabase.ansatt.nav.no
   - name: MB_DB_USER
