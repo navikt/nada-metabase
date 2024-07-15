@@ -5,7 +5,7 @@ annotations:
     value: "8m"
   - key: nginx.ingress.kubernetes.io/proxy-read-timeout
     value: "600"
-image: metabase/metabase-enterprise:v1.50.12
+image: metabase/metabase-enterprise:v1.50.13
 envs:
   - name: MB_DB_TYPE
     value: postgres
