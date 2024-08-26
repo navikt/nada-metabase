@@ -33,6 +33,15 @@ spec:
     sqlInstances:
     - name: metabasev3
       databases:
+        - name: metabase
+      type: POSTGRES_12
+      tier: db-custom-1-3840
+      flags:
+        - name: max_connections
+          value: "50"
+      diskAutoresize: true
+    - name: metabasev2
+      databases:
       - name: metabase
       type: POSTGRES_12
       tier: db-custom-1-3840
