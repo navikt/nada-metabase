@@ -11,8 +11,6 @@ envs:
     value: postgres
   - name: MB_DB_DBNAME
     value: metabase
-  - name: MB_DB_HOST
-    value: "127.0.0.1"
   - name: MB_DB_PORT
     value: "5432"
   - name: JAVA_TIMEZONE

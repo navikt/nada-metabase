@@ -23,6 +23,8 @@ spec:
     value: https://metabase.ansatt.dev.nav.no
   - name: MB_DB_USER
     value: metabasedb
+  - name: MB_DB_HOST
+    value: "100.71.0.188"
   {{#each envs}}
   - name: {{this.name}}
     value: "{{this.value}}"
