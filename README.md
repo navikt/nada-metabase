@@ -1,3 +1,5 @@
+Archived: we have moved this functionality into https://github.com/navikt/nada-backend
+
 # Metabase
 
 Naisifisert kjøring av Metabase.
